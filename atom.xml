@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://forevernull.github.io/"/>
-  <updated>2016-07-26T07:41:57.000Z</updated>
+  <updated>2016-08-11T09:34:28.000Z</updated>
   <id>https://forevernull.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://forevernull.github.io/2016/07/26/hello-world/"/>
-    <id>https://forevernull.github.io/2016/07/26/hello-world/</id>
-    <published>2016-07-26T07:41:57.000Z</published>
-    <updated>2016-07-26T07:41:57.000Z</updated>
+    <link href="https://forevernull.github.io/2016/08/11/hello-world/"/>
+    <id>https://forevernull.github.io/2016/08/11/hello-world/</id>
+    <published>2016-08-11T09:34:28.000Z</published>
+    <updated>2016-08-11T09:34:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <a id="more"></a>
@@ -44,11 +44,39 @@
   </entry>
   
   <entry>
+    <title>pyhive安装与使用</title>
+    <link href="https://forevernull.github.io/2016/08/11/hive%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+    <id>https://forevernull.github.io/2016/08/11/hive安装与使用/</id>
+    <published>2016-08-11T08:31:21.000Z</published>
+    <updated>2016-08-11T09:47:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hive太稳定了，基本上每个架构都离不开这个工具，下面我们通过python连接hive，然后完成各种查询等的操作。<br>Python Hive有一个很好的工具<a href="https://github.com/dropbox/PyHive" target="_blank" rel="external">pyHive</a></p>
+<a id="more"></a>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>Python 2.7</li>
+<li>我使用的是Centos系统,所以还需要安装:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo yum install -y install cyrus-sasl cyrus-sasl-devel cyrus-sasl-plain cyrus-sasl-gssapi</div></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install pyhive[hive]</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyhive <span class="keyword">import</span> hive</div><div class="line"><span class="keyword">from</span> TCLIService.ttypes <span class="keyword">import</span> TOperationState</div><div class="line">cursor = hive.connect(<span class="string">'localhost'</span>).cursor()</div><div class="line">cursor.execute(<span class="string">'SELECT * FROM my_awesome_data LIMIT 10'</span>, <span class="keyword">async</span>=<span class="keyword">True</span>)</div><div class="line"></div><div class="line">status = cursor.poll().operationState</div><div class="line"><span class="keyword">while</span> status <span class="keyword">in</span> (TOperationState.INITIALIZED_STATE, TOperationState.RUNNING_STATE):</div><div class="line">    logs = cursor.fetch_logs()</div><div class="line">    <span class="keyword">for</span> message <span class="keyword">in</span> logs:</div><div class="line">        <span class="keyword">print</span> message</div><div class="line"></div><div class="line">    <span class="comment"># If needed, an asynchronous query can be cancelled at any time with:</span></div><div class="line">    <span class="comment"># cursor.cancel()</span></div><div class="line"></div><div class="line">    status = cursor.poll().operationState</div><div class="line"></div><div class="line"><span class="keyword">print</span> cursor.fetchall()</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实这是一篇测试文章，具体请<a href="https://github.com/dropbox/PyHive" target="_blank" rel="external">参考</a>, 大部分代码纯属抄袭！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hive太稳定了，基本上每个架构都离不开这个工具，下面我们通过python连接hive，然后完成各种查询等的操作。&lt;br&gt;Python Hive有一个很好的工具&lt;a href=&quot;https://github.com/dropbox/PyHive&quot;&gt;pyHive&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>关于我</title>
     <link href="https://forevernull.github.io/2016/07/25/About-Me/"/>
     <id>https://forevernull.github.io/2016/07/25/About-Me/</id>
     <published>2016-07-25T15:55:17.000Z</published>
-    <updated>2016-07-26T07:33:23.000Z</updated>
+    <updated>2016-08-04T14:42:52.000Z</updated>
     
     <summary type="html">
     

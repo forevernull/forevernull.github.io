@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 数据结构线性表 · Forevernull's Lab</title><meta name="description" content="数据结构线性表 - Forevernull"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://forevernull.github.io/atom.xml" title="Forevernull's Lab"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/3270239731" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/forevernull" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">数据结构线性表</h1><div class="post-info">2016年10月8日</div><div class="post-content"><p>什么是线性表?怎么存数据?线性表的插入与删除操作?本文只涉及这三个问题。<br><a id="more"></a></p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>线性表（Linear List）是由n（n≥0）个数据元素组成的有限序列。</p>
+<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><ul>
+<li>顺序表</li>
+<li>链表(单链表, 双链表, 循环链表)<ul>
+<li>单链表<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png" alt="单链表"></li>
+<li>双向链表<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png" alt="双向链表"></li>
+<li>循环链表<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Circularly-linked-list.svg/350px-Circularly-linked-list.svg.png" alt="循环链表"></li>
+</ul>
+</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><p>删除操作是O(n)的操作，首先从头开始找到第i个元素p，然后执行删除操作:</p>
+<ul>
+<li>顺序表，直接”挤删”，移动n-i个元素即可</li>
+<li>单链表, q-&gt;next = q-&gt;next-&gt;next; //q为p的前驱结点，此处忽略释放<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/CPT-LinkedLists-deletingnode.svg/380px-CPT-LinkedLists-deletingnode.svg.png" alt="单链表删除"></li>
+<li>双链表, p-&gt;prior-&gt;next=p-&gt;next;   p-&gt;next-&gt;prior=p-&gt;prior;  //未考虑头尾结点</li>
+<li>循环链表参考单链表或双链表</li>
+</ul>
+<h4 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h4><p>插入操作是O(n)的操作，需要找到第i个元素p后插入s:</p>
+<ul>
+<li>顺序表, 后移n-i个元素,p[i] = s;</li>
+<li>单链表, s = p-&gt;next; p-&gt;next = s;<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/CPT-LinkedLists-addingnode.svg/474px-CPT-LinkedLists-addingnode.svg.png" alt="单链表插入"></li>
+<li>双链表, s-&gt;prior = p; s-&gt;next = p-&gt;next; p-&gt;next-&gt;prior=s; p-&gt;next = s;</li>
+<li>循环链表参考单链表或双链表</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://en.wikipedia.org/wiki/Linked_list" target="_blank" rel="external">https://en.wikipedia.org/wiki/Linked_list</a><br><a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A1%A8" target="_blank" rel="external">https://zh.wikipedia.org/wiki/线性表</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/08/11/hive安装与使用/" class="next">下一篇</a></div><div class="copyright"><p>© 2016 <a href="https://forevernull.github.io">Forevernull</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>

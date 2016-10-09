@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://forevernull.github.io/"/>
-  <updated>2016-10-08T11:31:24.000Z</updated>
+  <updated>2016-10-09T08:07:51.000Z</updated>
   <id>https://forevernull.github.io/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构 - 堆栈和队列</title>
+    <link href="https://forevernull.github.io/2016/10/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A0%86%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/"/>
+    <id>https://forevernull.github.io/2016/10/09/数据结构堆栈和队列/</id>
+    <published>2016-10-09T03:32:00.000Z</published>
+    <updated>2016-10-09T08:07:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>堆栈和队列是操作受限的线性表，栈为后进先出(LIFO)的线性表,队列为先进先出(FIFO)的线性表。<br><a id="more"></a></p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈只允许在栈顶进行进栈(push)和出栈(pop)操作。对于链栈，next域指向靠近栈底的元素。</p>
+<image src="http://images2015.cnblogs.com/blog/707050/201510/707050-20151016111838476-1991678473.png" height="200">
+
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h4 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h4><p>队列的存储可以使用线性表的数组或者带尾指针链表存储方式，逻辑结构包括顺序队列，为了避免“假溢出”引入循环队列。</p>
+<ul>
+<li>顺序队列(普通队列、双端队列)</li>
+<li>循环队列</li>
+</ul>
+<h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p>假设队列为0…n, M = n+1 </p>
+<ul>
+<li>队列长度:<ul>
+<li>顺序队列: rear - front</li>
+<li>循环队列: (rear - front + M) mod M</li>
+</ul>
+</li>
+<li>判空<ul>
+<li>队列: front = rear</li>
+</ul>
+</li>
+<li>判满<ul>
+<li>顺序队列: rear - front = M</li>
+<li>循环队列: (rear - front + 1 + M ) mod M = M //牺牲一个存储单元，请查看示例</li>
+</ul>
+</li>
+<li>插入<ul>
+<li>顺序队列: rear = rear + 1; front 不动;</li>
+<li>循环队列: rear = (rear + 1) mod M; front 不动;</li>
+</ul>
+</li>
+<li>删除<ul>
+<li>顺序队列: front = front + 1; rear = rear</li>
+<li>循环队列: front = (front + 1) mod M; rear = rear</li>
+</ul>
+</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="http://www.nowamagic.net/librarys/images/201211/2012_11_22_01.jpg" alt="顺序队列"><br><img src="http://c.biancheng.net/cpp/uploads/allimg/140713/1-140G32234251B.jpg" alt="循环队列"></p>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank" rel="external">leetcode: valid parentheses</a> 利用栈进行符号匹配</p>
+</image>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;堆栈和队列是操作受限的线性表，栈为后进先出(LIFO)的线性表,队列为先进先出(FIFO)的线性表。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://forevernull.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构 - 线性表</title>

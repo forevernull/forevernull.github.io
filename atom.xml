@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://forevernull.github.io/"/>
-  <updated>2016-10-10T16:23:42.000Z</updated>
+  <updated>2016-10-10T16:25:36.000Z</updated>
   <id>https://forevernull.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://forevernull.github.io/2016/10/10/2016-10-10-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5/"/>
     <id>https://forevernull.github.io/2016/10/10/2016-10-10-数据结构数组和矩阵/</id>
     <published>2016-10-10T15:11:00.000Z</published>
-    <updated>2016-10-10T16:23:42.000Z</updated>
+    <updated>2016-10-10T16:25:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>数组与矩阵是特殊形式的线性表。数组包括一维数组和多维数组，多维数组就是多个一维数组的拼接;<br>矩阵是数组的特例，主要考虑矩阵的压缩，用于节约存储空间，主要考虑有规律的矩阵，其中包括对称阵、三角阵以及稀疏矩阵这几种特殊矩阵。<br><a id="more"></a></p>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>数组是由n（n&gt;=1）个相同类型的数据元素构成的有限序列。</p>
@@ -35,7 +35,7 @@
 <h4 id="存储方式-1"><a href="#存储方式-1" class="headerlink" title="存储方式"></a>存储方式</h4><ul>
 <li>对称矩阵: 只存储主对角线和下三角区的元素，一维数组B[n(n+1)/2]<br><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-1202221H350506.jpg" height="250"></li>
 <li>三角矩阵: 存储主对角线和下三角区的元素, 及上三角中的常量一次,一维数组B[n(n+1)/2 + 1]<br><img src="http://www.educity.cn/zk/sjjg/images/20068288629.gif" height="150"></li>
-<li>三对角矩阵: 第一行和第二行为两个元素，其他行为三个元素, 按行优先存储到一维数组中。<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/df3151d2eb6faa10d9c59070532f183ab1e64d8c" height="100"></li>
+<li>三对角矩阵: 第一行和最后一行为两个元素，其他行为三个元素, 按行优先存储到一维数组中。<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/df3151d2eb6faa10d9c59070532f183ab1e64d8c" height="100"></li>
 <li>稀疏矩阵: 非零元素存储为三元组(行，列，值)<br><img src="http://www.educity.cn/zk/sjjg/images/20068281174.gif" height="200"></li>
 </ul>
 ]]></content>

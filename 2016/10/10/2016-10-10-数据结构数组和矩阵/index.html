@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 数据结构 - 数组与矩阵 · Forevernull's Lab</title><meta name="description" content="数据结构 - 数组与矩阵 - Forevernull"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://forevernull.github.io/atom.xml" title="Forevernull's Lab"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/3270239731" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/forevernull" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">数据结构 - 数组与矩阵</h1><div class="post-info">2016年10月10日</div><div class="post-content"><p>数组与矩阵是特殊形式的线性表。数组包括一维数组和多维数组，多维数组就是多个一维数组的拼接;<br>矩阵是数组的特例，主要考虑矩阵的压缩，用于节约存储空间，主要考虑有规律的矩阵，其中包括对称阵、三角阵以及稀疏矩阵这几种特殊矩阵。<br><a id="more"></a></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>数组是由n（n&gt;=1）个相同类型的数据元素构成的有限序列。</p>
+<h4 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h4><p>一个数组的所有元素在内存中占用一段连续的存储空间。对于多维数组有两种映射方式：行优先和列优先。<br><img src="http://img.my.csdn.net/uploads/201009/20/0_1284982005Uo02.gif" height="250"></p>
+<h4 id="操作-关注点"><a href="#操作-关注点" class="headerlink" title="操作(关注点)"></a>操作(关注点)</h4><ul>
+<li>存储结构关系:<ul>
+<li>一维数组: LOC(a<sub>i</sub>) = LOC(a<sub>0</sub>) + i x L (0&lt;=i&lt;n, L为每个元素所占存储空间)</li>
+</ul>
+</li>
+</ul>
+<h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>特殊矩阵: 是指具有许多相同元素或零元素，并且这些相同矩阵元素或零元素的分布有一定规律性的矩阵。常见的特殊矩阵有对称矩阵、三角矩阵、对称矩阵。</p>
+<h4 id="存储方式-1"><a href="#存储方式-1" class="headerlink" title="存储方式"></a>存储方式</h4><ul>
+<li>对称矩阵: 只存储主对角线和下三角区的元素，一维数组B[n(n+1)/2]<br><img src="http://c.biancheng.net/cpp/uploads/allimg/120222/1-1202221H350506.jpg" height="250"></li>
+<li>三角矩阵: 存储主对角线和下三角区的元素, 及上三角中的常量一次,一维数组B[n(n+1)/2 + 1]<br><img src="http://www.educity.cn/zk/sjjg/images/20068288629.gif" height="150"></li>
+<li>稀疏矩阵: 非零元素存储为三元组(行，列，值)<br><img src="http://www.educity.cn/zk/sjjg/images/20068281174.gif" height="200"></li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/10/09/数据结构堆栈和队列/" class="next">下一篇</a></div><div class="copyright"><p>© 2016 <a href="https://forevernull.github.io">Forevernull</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>

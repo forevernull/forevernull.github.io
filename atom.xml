@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://forevernull.github.io/"/>
-  <updated>2016-10-12T16:28:08.000Z</updated>
+  <updated>2016-10-12T16:33:59.000Z</updated>
   <id>https://forevernull.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://forevernull.github.io/2016/10/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91/"/>
     <id>https://forevernull.github.io/2016/10/12/数据结构树/</id>
     <published>2016-10-12T15:00:00.000Z</published>
-    <updated>2016-10-12T16:28:08.000Z</updated>
+    <updated>2016-10-12T16:33:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>树是一种非线性结构<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>树是一种非线性结构,已根节点和子数给出递归定义，同时主要考察数的是那种存储方式，双亲表示法、孩子表示法和孩子兄弟表示法，以及树的遍历。<br><a id="more"></a></p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>树是N个节点的有限集合，N=0是<strong>空树</strong>, 非空树满足:</p>
 <ul>
 <li>有且仅有一个特定的根结点</li>
@@ -59,7 +59,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;树是一种非线性结构&lt;br&gt;
+      &lt;p&gt;树是一种非线性结构,已根节点和子数给出递归定义，同时主要考察数的是那种存储方式，双亲表示法、孩子表示法和孩子兄弟表示法，以及树的遍历。&lt;br&gt;
     
     </summary>
     

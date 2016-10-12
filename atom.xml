@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://forevernull.github.io/"/>
-  <updated>2016-10-10T16:25:36.000Z</updated>
+  <updated>2016-10-12T16:28:08.000Z</updated>
   <id>https://forevernull.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构 - 树</title>
+    <link href="https://forevernull.github.io/2016/10/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91/"/>
+    <id>https://forevernull.github.io/2016/10/12/数据结构树/</id>
+    <published>2016-10-12T15:00:00.000Z</published>
+    <updated>2016-10-12T16:28:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>树是一种非线性结构<br><a id="more"></a></p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>树是N个节点的有限集合，N=0是<strong>空树</strong>, 非空树满足:</p>
+<ul>
+<li>有且仅有一个特定的根结点</li>
+<li>当N&gt;1时，其余节点可分为m(m&gt;0)个互不相交的有限集合T<sub>1</sub>, T<sub>2</sub>, … T<sub>m</sub>,其中每个集合本身又构成一棵树</li>
+</ul>
+<p>上述即为所谓的递归定义。树中的结点除根节点外有且仅有一个前驱结点，可以有多个后继结点。<br>树适用于表示层次结构的数据。<br><img src="http://7xospc.com1.z0.glb.clouddn.com/6-2-1.jpg" height="200"></p>
+<h4 id="术语定义"><a href="#术语定义" class="headerlink" title="术语定义"></a>术语定义</h4><ul>
+<li>各种结点: 祖先结点，子孙结点，双亲结点，孩子结点，这个就是位置关系，不赘述。</li>
+<li>叶子结点、分支结点: 是说有没有孩子的问题，有就是分支节点，否则为叶子节点。</li>
+<li>度: 树中一个结点的子结点个数。</li>
+<li>节点深度: 从树根到结点的层数。</li>
+<li>节点的高度: 从叶节点到结点的层数。</li>
+<li>树的高度(深度): 树中节点的最大层数。  </li>
+</ul>
+<h4 id="树的性质"><a href="#树的性质" class="headerlink" title="树的性质"></a>树的性质</h4><ul>
+<li>树的结点数等于所有节点度数加1.</li>
+<li>度为m的树中第i层上至多有m<sup>i-1</sup>个节点(i&gt;=1)</li>
+<li>高度为h的m叉树至多有(m<sup>h</sup>-1)/(m-1)个几点（把每层加起来就知道了）</li>
+<li>具有n个节点的m叉树的最小高度为log<sub>m</sub>(n(m-1)+1)向上取整</li>
+</ul>
+<h2 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h2><p>虽然树是非线性的，但是依然使用线性结构存储，可以采用顺序存储也可以采用链式存储，但是必须能够唯一地反映出各结点之间的逻辑关系，常用的有三种存储方式。</p>
+<h4 id="双亲表示法"><a href="#双亲表示法" class="headerlink" title="双亲表示法"></a>双亲表示法</h4><p>双亲表示法采用一组连续的空间来存储每个结点，同时在每个结点增设一个伪指针，指示其双亲结点在数组中的位置。根节点下标为0，其伪指针为-1。<br><img src="http://uploadfiles.nowcoder.com/images/20151024/141075_1445693833613_1AAF5362E19DED27A8EF34AC86C6C201" height="200"></p>
+<p>特点: 可以很快找到结点的双亲，要找结点的孩子结点需要遍历</p>
+<h4 id="孩子（链表）表示法"><a href="#孩子（链表）表示法" class="headerlink" title="孩子（链表）表示法"></a>孩子（链表）表示法</h4><p>孩子表示法是讲每个结点的孩子结点都用单链表链接起来形成一个线性结构，则N个节点就有N个孩子链表（叶子节点的孩子链表为空表）<br><img src="http://img.blog.csdn.net/20160203195139991?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" height="200"></p>
+<p>特点: 可以很快找到结点的孩子，但找双亲需要遍历</p>
+<h4 id="孩子兄弟表示法"><a href="#孩子兄弟表示法" class="headerlink" title="孩子兄弟表示法"></a>孩子兄弟表示法</h4><p>孩子兄弟表示法又叫二叉树表示法，即以二叉链表作为树的存储结构。孩子兄弟表示法是使每个结点包含是：结点值、指向结点第一个孩子结点的指针和指向结点下一个兄弟结点的指针。</p>
+<p><img src="http://images.cnitblog.com/blog/702546/201412/171546512811963.png" height="200"></p>
+<p>特点: 可以方便地转化为二叉树，易于查找结点的孩子，但是查找双亲比较麻烦</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h4 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h4><ul>
+<li>先根遍历：若树非空，则先访问根结点，再按照从左到右的顺序遍历根结点的每一棵子树，其访问顺序与这棵树相应的二叉树的先序遍历顺序相同。<br><img src="http://img0.imgtn.bdimg.com/it/u=4077072849,2681057515&fm=21&gp=0.jpg" height="200"></li>
+<li>后跟遍历: 若树非空，则按从左到右的顺序遍历根节点的每一棵子树，之后再访问跟几点，其访问顺序与这棵树相应二叉树的中序遍历顺序相同。<br><img src="http://7xospc.com1.z0.glb.clouddn.com/6-8-4.jpg" height="200"></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;树是一种非线性结构&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://forevernull.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构 - 数组与矩阵</title>
